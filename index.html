@@ -1,25 +1,78 @@
+<!DOCTYPE html>
 <html>
- <head>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>3D旋转</title>
+    <style type="text/css">
+        *{padding: 0;
+        margin: 0;}
+        body,html{height:100%;}
+        body{background-image: url("images/beijing.jpg");}
+        #box{width: 280px;
+            height: 400px;
+            position: fixed;
+            left: 0;
+            right: 0;
+            top:0;
+            bottom: 0;
+            margin: auto;
+            transform-style: preserve-3d;
+            transform: rotateX(0deg) rotateY(0deg);
+            animation: go 45s linear infinite;
+           }
+        #box img{width: 280px;
+                 height: 400px;
+                 position: absolute;
+                 left: 0;
+                 top: 0;
+        }
+        #box img:nth-child(1){
+            transform: rotateY(0deg) translateZ(650px);}
+        #box img:nth-child(2){
+            transform: rotateY(36deg) translateZ(650px);}
+        #box img:nth-child(3){
+            transform: rotateY(72deg) translateZ(650px);}
+        #box img:nth-child(4){
+            transform: rotateY(108deg) translateZ(650px);}
+        #box img:nth-child(5){
+            transform: rotateY(144deg) translateZ(650px);}
+        #box img:nth-child(6){
+            transform: rotateY(180deg) translateZ(650px);}
+        #box img:nth-child(7){
+            transform: rotateY(216deg) translateZ(650px);}
+        #box img:nth-child(8){
+            transform: rotateY(252deg) translateZ(650px);}
+        #box img:nth-child(9){
+            transform: rotateY(288deg) translateZ(650px);}
+        #box img:nth-child(10){
+            transform: rotateY(324deg) translateZ(650px);}
+@keyframes go {
+    0%{transform: rotateX(0deg) rotateY(0deg);}
+    25%{transform: rotateX(20deg) rotateY(180deg);}
+    50%{transform: rotateX(0deg) rotateY(360deg);}
+    75%{transform: rotateX(-20deg) rotateY(540deg);}
+    100%{transform: rotateX(0deg) rotateY(720deg);}
+
+}
+    </style>
 </head>
 <body>
- <p>半夜时分，一个人躺在床上，四处静谧无声，有一种孤独的感觉如爬虫般悄悄爬上我的心头，辗转反侧，无法入眠。轻轻起来，戴上耳机听音乐，打开书本……</P>
-
-　　<p> 曾经看见过这样一句话：有一种心情叫无助，有一种美丽叫孤独。对耐不住寂寞的人来说，孤独是可怕的，是恐惧的。而对我来说，孤独是生命圆满的开始，是一种静美，不喧嚣，不繁华，是在静谧中独享一个人的清欢。</P>
-
-　　<p> 你看，那独钓寒江雪的柳宗元是孤独的。在下着大雪的江面上，一叶小舟，一个老渔翁，独自在寒冷的江心垂钓。天地之间是如此纯洁而寂静，只剩下他一个人，与万物共谋。一尘不染，万籁无声。这清高孤傲的渔翁，正是柳宗元自己在政治上失意郁闷和苦恼时，隐居在山水之间寄托自己清高而孤傲情感的真实写照。他的幽静过于孤独，过于冷清，不带一点人间烟火的气味。</P>
-
-　　 <p>其实人人骨子里皆有一份别人无法理解，也无法自拔的孤独。只是很多时候，这孤独总会被周遭的喧嚣浮华所蒙蔽，以致造成繁荣的假象。殊不知，不理会这种孤独，在某种意义上而言，我们便不算真正活过。或许我们，本就应该学会享受孤独。在孤独的时候，你才可以听到自己的心跳和呼吸，寻找到迷失的自我。</P>
-
-　　<p> 不知不觉，我也喜欢上了孤独。我的孤独和风月无关，和苦闷无关，有着浓浓的烟火气息，只是一种一个人独处时的欢喜。</P>
-
-　　<p> 我喜欢孤独，不与任何人说话，在一份静谧中安然地做自己喜欢的事。任身心徜徉，暂时忘却“柴米油盐酱醋茶”的烦琐，去体验“琴棋书画诗酒花”的高雅；暂时抛开追名逐利的忙碌奔波，去感受心无杂念的宁静淡泊；暂时摆脱困扰你的喜怒哀乐，去体味生活中的充实祥和。</P>
-
-　　 <p>于是，体会孤独，感受孤独，不失为一种最佳的休闲。身体可以在孤独中得到休养，繁重的体力，超负的劳动，使身体需要有一份适时的孤独来调养。心灵可以在孤独中寻找到一份难得的宁静，不再为生活中尔虞我诈的争斗而烦恼，不再为日常生活的重负而苦闷，而在孤独中寻找适合调整心情的方式，让心情在孤独中拥有一份独特的享受。</P>
-
-　　 <p>孤独的最高修为，莫过于在孤独中创造，亦或是读读古今，写写心声，种种花草。多一份孤独的快乐，少一份无为的浪费，让生命在富有创造精神的孤独中度过，让生命时光的每一分每一秒不至于虚度。在孤独中拥有了自己的一切，你会觉得你一点也不孤独。于是，你就会明白，能够真正拥有孤独的人是世界上最幸福的人。</P>
-
-　　 <p>是的，我就是这样享受孤独。因为，我只是万千世界中一株最不起眼的小草，静是我的姿态，淡是我的心境，孤独是我的享受。</P>
-
-　　<p> 孤独是一种境界，它折射出一个人潜藏的能量；孤独是一味珍宝，它蕴涵着高贵的情愫和追求；孤独是一场燃烧，它灿烂的火光给人温暖和力量；孤独是一份爱，因为，无爱的人不会孤独……</P>
-  </body>
+<div id="box">
+    <img src="images/1.jpg">
+    <img src="images/2.jpg">
+    <img src="images/3.jpg">
+    <img src="images/4.jpg">
+    <img src="images/5.jpg">
+    <img src="images/6.jpg">
+    <img src="images/7.jpg">
+    <img src="images/8.jpg">
+    <img src="images/9.jpg">
+    <img src="images/10.jpg">
+</div>
+</body>
 </html>
+--------------------- 
+作者：黑胡子丶 
+来源：CSDN 
+原文：https://blog.csdn.net/qq_43144014/article/details/82778764 
+版权声明：本文为博主原创文章，转载请附上博文链接！
