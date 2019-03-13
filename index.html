@@ -1,67 +1,157 @@
-<!DOCTYPE html>
+<!doctype html>
+
 <html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>3D旋转</title>
-    <style type="text/css">
-        *{padding: 0;
-        margin: 0;}
-        body,html{height:100%;}
-        body{background-image: url("images/beijing.jpg");}
-        #box{width: 280px;
-            height: 400px;
-            position: fixed;
-            left: 0;
-            right: 0;
-            top:0;
-            bottom: 0;
-            margin: auto;
-            transform-style: preserve-3d;
-            transform: rotateX(0deg) rotateY(0deg);
-            animation: go 45s linear infinite;
-           }
-        #box img{width: 280px;
-                 height: 400px;
-                 position: absolute;
-                 left: 0;
-                 top: 0;
-        }
-        #box img:nth-child(1){
-            transform: rotateY(0deg) translateZ(650px);}
-        #box img:nth-child(2){
-            transform: rotateY(36deg) translateZ(650px);}
-        #box img:nth-child(3){
-            transform: rotateY(72deg) translateZ(650px);}
-        #box img:nth-child(4){
-            transform: rotateY(108deg) translateZ(650px);}
-        #box img:nth-child(5){
-            transform: rotateY(144deg) translateZ(650px);}
-        #box img:nth-child(6){
-            transform: rotateY(180deg) translateZ(650px);}
-        #box img:nth-child(7){
-            transform: rotateY(216deg) translateZ(650px);}
-        #box img:nth-child(8){
-            transform: rotateY(252deg) translateZ(650px);}
-        #box img:nth-child(9){
-            transform: rotateY(288deg) translateZ(650px);}
-        #box img:nth-child(10){
-            transform: rotateY(324deg) translateZ(650px);}
-@keyframes go {
-    0%{transform: rotateX(0deg) rotateY(0deg);}
-    25%{transform: rotateX(20deg) rotateY(180deg);}
-    50%{transform: rotateX(0deg) rotateY(360deg);}
-    75%{transform: rotateX(-20deg) rotateY(540deg);}
-    100%{transform: rotateX(0deg) rotateY(720deg);}
+
+<head>
+
+<meta charset="UTF">
+
+<title>小仙女的专属相册</title>
+
+<style>
+
+*{margin:0;padding:0;}
+
+body{background:url(img/bg.jpg);width:100%;height:100%;overflow:hidden;};
+
+h1{width:277;height:76px;margin:30px auto 0;}
+
+.xc-3D{width:100%;height:300px;background:#fff;margin-top:100px;position:relative;transform-style:preserve-3D;/*转变3D*/perspective:800px;//景深}
+
+.xc-3D img{position:absolute;-webkit-box-reflect:below 0 -webkit-linear-gradient(top,rgba(0,0,0,0.1),rgba(0,0,0,0.5));transition:1s;}
+
+.xc-3D img .forn{transform:rotateY(45deg);transfromZ(-100px);}
+
+.xc-3D img .now{transform:rotateY(0deg);transfromZ(100px);}
+
+.xc-3D img .last{transform:rotateY(-45deg);transfromZ(-100px);}
+
+</style>
+
+</head>
+
+<body>
+
+ <h1>送给最可爱的小仙女</h1>
+
+ <div class="xc-3D" >
+     
+  <img src="images/1.jpg" width="300" height="200" alt="你最可爱了" />
+
+  <img src="images/2.jpg" width="300" height="200" alt="素颜的你最美" />
+
+  <img src="images/3.jpg" width="300" height="200" alt="亲爱的" />
+
+  <img src="images/4.jpg" width="300" height="200" alt="我们的回忆" />
+
+  <img src="images/5.jpg" width="300" height="200" alt="这是在诱惑我吗" />
+
+  <img src="images/6.jpg" width="300" height="200" alt="吃冰激凌的你也很可爱呢" />
+
+  <img src="images/7.jpg" width="300" height="200" alt="待续" />
+
+  <img src="images/8.jpg" width="300" height="200" alt="待续" />
+
+</div>
+
+ <script src="jquery.js"></script>
+
+ <script>
+
+var imgL=$(.xc-3D img).length；//代表有几个img
+
+var lastMin=Math.floor(imgL/2);//向下取整数得到中间那个 初始中间序列号
+
+for(var i=0;i<imgL;i++){
+
+    if(i<lastMin){
+
+         $(".xc-3D img")eq(1).addClass("forn");
+
+    }else if(i>lastMin){
+
+         $(".xc-3D img")eq(1).addClass("last");
+
+    }else{
+
+          $(".xc-3D img")eq(1).addClass("now");
+
+    }
+
+  };
+
+};
+
+//控制位置
+
+function mind(){
+
+//浏览器宽度
+
+var w_l=$(window).width();
+
+var _left=w_l/2)-$(".xc-3D.now").width/2;
+
+$(".xc-3D img.now").css({left:_left+"px"});
+
+for(var i=0;i<imgL;i++){
+
+//非常重要
+
+   $(".xc-3D img.now").eq(i).css(left:_left-(lastMin-i)*150+"px");
+
+};
+
+//把left存储起来
+
+Left[i]=parseInt($(".xc-3D img").eq(i).css("left"));//把字符串转化为数字
 
 }
-    </style>
-</head>
-<body>
-<div id="box">
-    <img src="images/1.jpg">
-    <img src="images/2.jpg">
-    <img src="images/3.jpg">
-    <img src="images/4.jpg">
-</div>
+
+$(.xc-3D img).click(funtion(){
+
+//添加样式
+
+for(var i=0;i<imgL;i++){
+
+   var nowMin=$(this).index();
+
+    if(i<nowMin){
+
+         $(".xc-3D img")eq(1).removeClass().addClass("forn");
+
+    }else if(i>nowMin){
+
+         $(".xc-3D img")eq(1).removeClass().addClass("last");
+
+    }else{
+
+          $(".xc-3D img")eq(1).removeClass.addClass("now");
+
+    };
+
+};;
+
+//确定位置
+
+for(var i=0;i<imgL;i++)
+
+  Left[i]-=(nowMin-lastMin)*150;//为什么
+
+//非常重要
+
+$(".xc-3D img").eq(i).css({left:Left[i]+"px"});
+
+};
+
+lastMin=nowMin;//当前和初始值交替
+
+})
+
+ 
+
+</script>
+
 </body>
+
 </html>
